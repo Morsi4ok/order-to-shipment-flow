@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order to Shipment Flow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Operations Flow</p>
+        <h1>From Order to Shipment</h1>
+        <p class="hero-text">
+          Track how customer orders move through validation, picking, packing, and shipment with a compact operational view.
+        </p>
+      </div>
+      <div class="hero-stats" id="summaryCards"></div>
+    </header>
+
+    <main class="dashboard">
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Pipeline</p>
+            <h2>Workflow Stages</h2>
+          </div>
+          <div class="legend">
+            <span><i class="dot active"></i>Current stage</span>
+            <span><i class="dot done"></i>Completed</span>
+            <span><i class="dot upcoming"></i>Upcoming</span>
+          </div>
+        </div>
+        <div class="stage-board" id="stageBoard"></div>
+      </section>
+
+      <section class="content-grid">
+        <section class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Orders</p>
+              <h2>Open Orders</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Order</th>
+                  <th>Customer</th>
+                  <th>Items</th>
+                  <th>Value</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel detail-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Shipment View</p>
+              <h2>Selected Order</h2>
+            </div>
+          </div>
+          <div id="orderDetail" class="order-detail"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
