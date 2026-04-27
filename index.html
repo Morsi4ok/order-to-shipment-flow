@@ -3,72 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order to Shipment Flow</title>
+  <title>Clearify Operations Hub</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="app-shell">
-    <header class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Operations Flow</p>
-        <h1>From Order to Shipment</h1>
-        <p class="hero-text">
-          Track how customer orders move through validation, picking, packing, and shipment with a compact operational view.
-        </p>
+    <aside class="sidebar">
+      <div class="brand-block">
+        <p class="eyebrow">Clearify</p>
+        <h1>Operations Hub</h1>
+        <p class="sidebar-copy">A shared workspace for order flow, shipment visibility, people access, and connected systems.</p>
       </div>
-      <div class="hero-stats" id="summaryCards"></div>
-    </header>
 
-    <main class="dashboard">
-      <section class="panel">
-        <div class="panel-heading">
-          <div>
-            <p class="eyebrow">Pipeline</p>
-            <h2>Workflow Stages</h2>
-          </div>
-          <div class="legend">
-            <span><i class="dot active"></i>Current stage</span>
-            <span><i class="dot done"></i>Completed</span>
-            <span><i class="dot upcoming"></i>Upcoming</span>
-          </div>
+      <nav class="sidebar-nav" id="sidebarNav" aria-label="Primary"></nav>
+
+      <section class="sidebar-card" id="sidebarSpotlight"></section>
+    </aside>
+
+    <main class="main-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="viewEyebrow"></p>
+          <h2 id="viewTitle"></h2>
+          <p class="topbar-copy" id="viewDescription"></p>
         </div>
-        <div class="stage-board" id="stageBoard"></div>
+        <div class="topbar-actions">
+          <span class="status-badge">Live workspace</span>
+          <span class="date-badge">Apr 27 planning cycle</span>
+        </div>
+      </header>
+
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Operations Snapshot</p>
+          <h3>Coordinate orders, shipments, teams, and integrations from one place.</h3>
+          <p>
+            The project now presents a fuller operational product shell so users can move between core areas instead of staying inside a single order table.
+          </p>
+        </div>
+        <div class="hero-stats" id="summaryCards"></div>
       </section>
 
-      <section class="content-grid">
-        <section class="panel">
-          <div class="panel-heading">
-            <div>
-              <p class="eyebrow">Orders</p>
-              <h2>Open Orders</h2>
-            </div>
-          </div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Order</th>
-                  <th>Customer</th>
-                  <th>Items</th>
-                  <th>Value</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody id="ordersTable"></tbody>
-            </table>
-          </div>
-        </section>
+      <section class="view-switcher" id="viewTabs" aria-label="Section tabs"></section>
 
-        <section class="panel detail-panel">
-          <div class="panel-heading">
-            <div>
-              <p class="eyebrow">Shipment View</p>
-              <h2>Selected Order</h2>
-            </div>
-          </div>
-          <div id="orderDetail" class="order-detail"></div>
-        </section>
-      </section>
+      <div id="viewContent" class="view-content"></div>
     </main>
   </div>
 
